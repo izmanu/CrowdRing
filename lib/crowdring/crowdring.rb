@@ -29,7 +29,7 @@ module Crowdring
     end
 
     configure :production do
-      #use Rack::SSL
+      use Rack::SSL
       service_handler.add('twilio', TwilioService.new(ENV["TWILIO_ACCOUNT_SID"], ENV["TWILIO_AUTH_TOKEN"]))
       #service_handler.add('kookoo', KooKooService.new(ENV["KOOKOO_API_KEY"]))
       #service_handler.add('nexmo', NexmoService.new(ENV["NEXMO_KEY"], ENV["NEXMO_SECRET"]))
